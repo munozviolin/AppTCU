@@ -28,15 +28,19 @@ public class Caso1 extends AppCompatActivity {
 
         Button buttonAudio = (Button) findViewById(R.id.buttonCaso1);
         mp = MediaPlayer.create(this, R.raw.st);
-        mp.start();
+        buttonAudio.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
                 try {
                     if (mp.isPlaying()) {
                         mp.stop();
                         mp.release();
-                        mp = MediaPlayer.create(this, R.raw.st);
+                        mp = MediaPlayer.create(Caso1.this, R.raw.st);
                     } mp.start();
                 } catch(Exception e) { e.printStackTrace(); }
+            }
+        });
 
         gestureObject = new GestureDetectorCompat(this, new Caso1.LearnGesture());
     }
