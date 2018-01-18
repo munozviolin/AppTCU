@@ -28,7 +28,7 @@ public class Fragment1 extends Fragment implements View.OnClickListener{
         // Inflate the layout for this fragment
 
         v = inflater.inflate(R.layout.fragment_fragment1, container, false);
-        b = (Button) v.findViewById(R.id.button);
+        b = (Button) v.findViewById(R.id.audioTab1);
         b1 = (Button) v.findViewById(R.id.button1);
         b2 = (Button) v.findViewById(R.id.mar);
         b.setOnClickListener(this);
@@ -41,12 +41,12 @@ public class Fragment1 extends Fragment implements View.OnClickListener{
     public void onClick(View view) {
         Intent i;
         int b = view.getId();
-        int a = R.id.button;
+        int a = R.id.audioTab1;
         int k = R.id.button1;
         int c = R.id.mar;
 
         if (b == a){
-            i = new Intent(view.getContext(), palabra1.class);
+            i = new Intent(view.getContext(), Caso1.class);
             startActivity(i);
         } else if (b == k){
             i = new Intent(view.getContext(), palabra2.class);
@@ -55,21 +55,5 @@ public class Fragment1 extends Fragment implements View.OnClickListener{
             i = new Intent(view.getContext(), palabra3.class);
             startActivity(i);
         }
-
-        /*switch (v.getId()){
-            case R.id.button:
-                i = new Intent(view.getContext(), palabra1.class);
-                startActivity(i);
-                break;
-            case R.id.button2:
-                i = new Intent(view.getContext(), palabra2.class);
-                startActivity(i);
-                break;
-            case R.id.button3:
-                i = new Intent(view.getContext(), palabra3.class);
-                startActivity(i);
-                break;
-        }*/
-
     }
 }

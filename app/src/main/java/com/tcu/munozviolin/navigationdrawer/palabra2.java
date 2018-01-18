@@ -1,5 +1,7 @@
 package com.tcu.munozviolin.navigationdrawer;
 
+import android.content.Context;
+import android.media.MediaPlayer;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -16,6 +18,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import android.widget.Button;
 import android.widget.TextView;
 
 public class palabra2 extends AppCompatActivity {
@@ -30,10 +33,13 @@ public class palabra2 extends AppCompatActivity {
      */
     private SectionsPagerAdapter mSectionsPagerAdapter;
 
+    static final MediaPlayer[] mp = new MediaPlayer[1];
+
     /**
      * The {@link ViewPager} that will host the section contents.
      */
     private ViewPager mViewPager;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -94,6 +100,43 @@ public class palabra2 extends AppCompatActivity {
          */
         private static final String ARG_SECTION_NUMBER = "section_number";
 
+        @Override
+        public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                                 Bundle savedInstanceState) {
+            View rootView = inflater.inflate(R.layout.fragment_palabra2, container, false);
+            TextView textView = (TextView) rootView.findViewById(R.id.section_label);
+            //textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
+
+            final Context context = container.getContext();
+            mp[0] = MediaPlayer.create(context, R.raw.star_wars);
+            int i = R.id.audio2;
+            final Button but = (Button) rootView.findViewById(i);
+            but.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    try {
+                        if (mp[0].isPlaying()) {
+                            mp[0].stop();
+                            mp[0].release();
+                            mp[0] = MediaPlayer.create(context, R.raw.st);
+                        } mp[0].start();
+                    } catch(Exception e) { e.printStackTrace(); }
+                }
+            });
+
+            return rootView;
+        }
+
+        @Override
+        public void onStop() {
+            super.onStop();
+
+            if (mp != null) {
+                mp[0].stop();
+            }
+        }
+
         public PlaceholderFragment() {
         }
 
@@ -107,15 +150,6 @@ public class palabra2 extends AppCompatActivity {
             args.putInt(ARG_SECTION_NUMBER, sectionNumber);
             fragment.setArguments(args);
             return fragment;
-        }
-
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                                 Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_palabra2, container, false);
-            TextView textView = (TextView) rootView.findViewById(R.id.section_label);
-            //textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
-            return rootView;
         }
     }
 

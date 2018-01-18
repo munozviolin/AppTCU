@@ -28,7 +28,7 @@
         tools:layout_conversion_absoluteWidth="58dp" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/audioTab1"
         android:layout_width="83dp"
         android:layout_height="46dp"
         android:layout_marginLeft="14dp"
@@ -55,7 +55,7 @@
         android:textColor="@android:color/background_light"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/audioTab1" />
 
     <Button
         android:id="@+id/mar"

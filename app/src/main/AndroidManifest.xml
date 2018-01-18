@@ -31,7 +31,8 @@
         <activity
             android:name=".palabra3"
             android:label="@string/title_activity_palabra3"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Caso1"></activity>
     </application>
 
 </manifest>

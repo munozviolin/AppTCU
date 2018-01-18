@@ -1,23 +1,26 @@
 package com.tcu.munozviolin.navigationdrawer;
 
 import android.content.Context;
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v4.view.GestureDetectorCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
+import android.view.GestureDetector;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -39,13 +42,13 @@ public class palabra1 extends AppCompatActivity {
      * The {@link ViewPager} that will host the section contents.
      */
     private ViewPager mViewPager;
+    GestureDetectorCompat gestureObject;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_palabra1);
-
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         // Create the adapter that will return a fragment for each of the three
@@ -65,8 +68,31 @@ public class palabra1 extends AppCompatActivity {
             }
         });
 
+        gestureObject = new GestureDetectorCompat(this, new LearnGesture());
     }
 
+    class LearnGesture extends GestureDetector.SimpleOnGestureListener {
+        @Override
+        public boolean onFling(MotionEvent event1, MotionEvent event2, float velocityX, float velocityY){
+            if (event2.getX() > event1.getX()){
+                Intent intent = new Intent(palabra1.this, palabra2.class);
+                finish();
+                startActivity(intent);
+            } /*else if (event1.getX() > event2.getX()){
+                Intent intent = new Intent(palabra1.this, palabra1.class);
+                finish();
+                startActivity(intent);
+            }*/
+            return true;
+        }
+
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event){
+        this.gestureObject.onTouchEvent(event);
+        return super.onTouchEvent(event);
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -167,13 +193,14 @@ public class palabra1 extends AppCompatActivity {
         public Fragment getItem(int position) {
             // getItem is called to instantiate the fragment for the given page.
             // Return a PlaceholderFragment (defined as a static inner class below).
-            return PlaceholderFragment.newInstance(position + 1);
+            return PlaceholderFragment.newInstance(position);
+
         }
 
         @Override
         public int getCount() {
             // Show 3 total pages.
-            return 3;
+            return 1;
         }
     }
 }
