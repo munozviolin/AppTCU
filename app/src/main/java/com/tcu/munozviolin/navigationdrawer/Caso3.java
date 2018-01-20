@@ -10,7 +10,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 
-public class Caso1 extends AppCompatActivity {
+public class Caso3 extends AppCompatActivity {
 
     GestureDetectorCompat gestureObject;
     static MediaPlayer mp = new MediaPlayer();
@@ -18,10 +18,10 @@ public class Caso1 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_caso1);
+        setContentView(R.layout.activity_caso3);
 
-        Button buttonAudio = (Button) findViewById(R.id.buttonCaso1);
-        mp = MediaPlayer.create(this, R.raw.st);
+        Button buttonAudio = (Button) findViewById(R.id.buttonCaso3);
+        mp = MediaPlayer.create(this, R.raw.pirates_of_caribbean);
         buttonAudio.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -30,15 +30,14 @@ public class Caso1 extends AppCompatActivity {
                     if (mp.isPlaying()) {
                         mp.stop();
                         mp.release();
-                        mp = MediaPlayer.create(Caso1.this, R.raw.st);
+                        mp = MediaPlayer.create(Caso3.this, R.raw.pirates_of_caribbean);
                     } mp.start();
                 } catch(Exception e) { e.printStackTrace(); }
             }
         });
 
-        gestureObject = new GestureDetectorCompat(this, new Caso1.LearnGesture());
+        gestureObject = new GestureDetectorCompat(this, new Caso3.LearnGesture());
     }
-
     @Override
     public void onStop() {
         super.onStop();
@@ -52,14 +51,14 @@ public class Caso1 extends AppCompatActivity {
         @Override
         public boolean onFling(MotionEvent event1, MotionEvent event2, float velocityX, float velocityY){
             if (event2.getX() > event1.getX()){//swipe izquierda
-                //Intent intent = new Intent(Caso1.this, palabra2.class);
+                Intent intent = new Intent(Caso3.this, Caso2.class);
+                finish();
+                Caso3.this.overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                startActivity(intent);
+            } else if (event1.getX() > event2.getX()){//swipe derecha
+                //Intent intent = new Intent(Caso3.this, Caso3.class);
                 //finish();
                 //startActivity(intent);
-            } else if (event1.getX() > event2.getX()){//swipe derecha
-                Intent intent = new Intent(Caso1.this, Caso2.class);
-                finish();
-                Caso1.this.overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
-                startActivity(intent);
             }
             return true;
         }

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     package="com.tcu.munozviolin.navigationdrawer">
 
     <application
@@ -20,19 +19,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".palabra1"
-            android:label="@string/title_activity_palabra1"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".palabra2"
-            android:label="@string/title_activity_palabra2"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".palabra3"
-            android:label="@string/title_activity_palabra3"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Caso1"></activity>
+        <activity android:name=".Caso1" />
+        <activity android:name=".Caso3" />
+        <activity android:name=".Caso2"></activity>
     </application>
 
 </manifest>

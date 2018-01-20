@@ -28,48 +28,45 @@
         tools:layout_conversion_absoluteWidth="58dp" />
 
     <Button
-        android:id="@+id/audioTab1"
+        android:id="@+id/b1"
         android:layout_width="83dp"
         android:layout_height="46dp"
-        android:layout_marginLeft="14dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="36dp"
         android:background="@android:color/holo_green_light"
         android:fontFamily="@font/flamenco_light"
-        android:text="Ukulele"
+        android:text="UKULELE"
         android:textColor="@android:color/background_light"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/b2"
         android:layout_width="83dp"
         android:layout_height="46dp"
-        android:layout_marginLeft="14dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:background="@android:color/holo_green_light"
         android:fontFamily="@font/flamenco_light"
-        android:text="Flor"
+        android:text="PIÑA"
         android:textColor="@android:color/background_light"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/audioTab1" />
+        app:layout_constraintTop_toBottomOf="@+id/b1" />
 
     <Button
-        android:id="@+id/mar"
+        android:id="@+id/b3"
         android:layout_width="83dp"
         android:layout_height="46dp"
-        android:layout_marginLeft="14dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:background="@android:color/holo_green_light"
         android:fontFamily="@font/flamenco_light"
-        android:text="Mar"
+        android:text="FRESA"
         android:textColor="@android:color/background_light"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button1" />
+        app:layout_constraintTop_toBottomOf="@+id/b2" />
 
 </android.support.constraint.ConstraintLayout>
