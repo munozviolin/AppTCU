@@ -3,6 +3,7 @@ package com.tcu.munozviolin.navigationdrawer;
 import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
 import android.media.MediaPlayer;
+import android.os.Handler;
 import android.support.v4.view.GestureDetectorCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -23,10 +24,21 @@ public class Caso3 extends AppCompatActivity {
         setContentView(R.layout.activity_caso3);
 
         //las siguientes 4 lineas corresponden al GIF de la flecha izquierda
-        ImageView imageView = (ImageView) findViewById(R.id.gifIzq3);
+        final ImageView imageView = (ImageView) findViewById(R.id.gifIzq3);
         imageView.setBackgroundResource(R.drawable.gif2);
-        AnimationDrawable frameAnimation = (AnimationDrawable) imageView.getBackground();
+        final AnimationDrawable frameAnimation = (AnimationDrawable) imageView.getBackground();
         frameAnimation.start();
+
+        //codigo para controlar la cantidad de segundos que dura la animacion
+        Handler handler1 = new Handler();
+        handler1.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                //detener el gif luego de 4 segundos
+                frameAnimation.stop();
+                imageView.setVisibility(View.INVISIBLE);
+            }
+        }, 4000);
 
         Button buttonAudio = (Button) findViewById(R.id.buttonCaso3);
         mp = MediaPlayer.create(this, R.raw.pirates_of_caribbean);
