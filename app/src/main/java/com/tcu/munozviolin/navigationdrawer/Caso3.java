@@ -1,6 +1,7 @@
 package com.tcu.munozviolin.navigationdrawer;
 
 import android.content.Intent;
+import android.graphics.drawable.AnimationDrawable;
 import android.media.MediaPlayer;
 import android.support.v4.view.GestureDetectorCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -9,6 +10,7 @@ import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 public class Caso3 extends AppCompatActivity {
 
@@ -19,6 +21,12 @@ public class Caso3 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_caso3);
+
+        //las siguientes 4 lineas corresponden al GIF de la flecha izquierda
+        ImageView imageView = (ImageView) findViewById(R.id.gifIzq3);
+        imageView.setBackgroundResource(R.drawable.gif2);
+        AnimationDrawable frameAnimation = (AnimationDrawable) imageView.getBackground();
+        frameAnimation.start();
 
         Button buttonAudio = (Button) findViewById(R.id.buttonCaso3);
         mp = MediaPlayer.create(this, R.raw.pirates_of_caribbean);

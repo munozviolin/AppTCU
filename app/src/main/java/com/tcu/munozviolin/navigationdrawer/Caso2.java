@@ -1,6 +1,7 @@
 package com.tcu.munozviolin.navigationdrawer;
 
 import android.content.Intent;
+import android.graphics.drawable.AnimationDrawable;
 import android.media.MediaPlayer;
 import android.support.v4.view.GestureDetectorCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -9,6 +10,7 @@ import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 public class Caso2 extends AppCompatActivity {
 
@@ -19,6 +21,18 @@ public class Caso2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_caso2);
+
+        //las siguientes 4 lineas corresponden al GIF de la flecha izquierda
+        ImageView imageView = (ImageView) findViewById(R.id.gifIzq);
+        imageView.setBackgroundResource(R.drawable.gif2);
+        AnimationDrawable frameAnimation = (AnimationDrawable) imageView.getBackground();
+        frameAnimation.start();
+
+        //las siguientes 4 lineas corresponden al GIF de la flecha derecha
+        ImageView imageView2 = (ImageView) findViewById(R.id.gifDer);
+        imageView2.setBackgroundResource(R.drawable.gif);
+        AnimationDrawable frameAnimation2 = (AnimationDrawable) imageView2.getBackground();
+        frameAnimation2.start();
 
         Button buttonAudio = (Button) findViewById(R.id.buttonCaso2);
         mp = MediaPlayer.create(this, R.raw.star_wars);

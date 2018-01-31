@@ -1,14 +1,21 @@
 package com.tcu.munozviolin.navigationdrawer;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.AnimationDrawable;
 import android.media.MediaPlayer;
+import android.net.Uri;
 import android.support.v4.view.GestureDetectorCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
+import android.webkit.WebView;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.MediaController;
+import android.widget.VideoView;
 
 public class Caso1 extends AppCompatActivity {
 
@@ -19,6 +26,12 @@ public class Caso1 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_caso1);
+
+        //las siguientes 4 lineas corresponden al GIF de la flecha derecha
+        ImageView imageView = (ImageView) findViewById(R.id.gif);
+        imageView.setBackgroundResource(R.drawable.gif);
+        AnimationDrawable frameAnimation = (AnimationDrawable) imageView.getBackground();
+        frameAnimation.start();
 
         Button buttonAudio = (Button) findViewById(R.id.buttonCaso1);
         mp = MediaPlayer.create(this, R.raw.st);
