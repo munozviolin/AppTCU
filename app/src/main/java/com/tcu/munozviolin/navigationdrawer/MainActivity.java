@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         //LO QUE SE MUESTRA AL INICIAR LA APP
-        setTitle("Este es el primer Fragment");
+        setTitle("Alfabeto");
         Fragment1 fragment = new Fragment1();
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.fram, fragment, "Fragment1");
@@ -91,19 +91,19 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_fl) {
-            setTitle("Este es el primer Fragment");
+            setTitle("Alfabeto");
             Fragment1 fragment = new Fragment1();
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.fram, fragment, "Fragment1");
             fragmentTransaction.commit();
         } else if (id == R.id.nav_f2) {
-            setTitle("Fragment2");
+            setTitle("Equivalencias");
             Fragment2 fragment = new Fragment2();
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.fram, fragment, "Fragment2");
             fragmentTransaction.commit();
         } else if (id == R.id.nav_f3) {
-            setTitle("Fragment3");
+            setTitle("Créditos");
             Fragment3 fragment = new Fragment3();
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.fram, fragment, "Fragment3");
