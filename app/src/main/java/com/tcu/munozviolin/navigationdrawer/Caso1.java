@@ -14,6 +14,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.webkit.WebView;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.MediaController;
 import android.widget.VideoView;
@@ -22,6 +23,7 @@ public class Caso1 extends AppCompatActivity {
 
     GestureDetectorCompat gestureObject;
     static MediaPlayer mp = new MediaPlayer();
+    static MediaPlayer mp2 = new MediaPlayer();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,8 +48,24 @@ public class Caso1 extends AppCompatActivity {
         }, 4000);
 
         Button buttonAudio = (Button) findViewById(R.id.buttonCaso1);
+        ImageButton buttonAudio1 = (ImageButton) findViewById(R.id.imageButton);
         mp = MediaPlayer.create(this, R.raw.st);
         buttonAudio.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                try {
+                    if (mp.isPlaying()) {
+                        mp.stop();
+                        mp.release();
+                        mp = MediaPlayer.create(Caso1.this, R.raw.st);
+                    } mp.start();
+                } catch(Exception e) { e.printStackTrace(); }
+            }
+        });
+
+        //mp2 = MediaPlayer.create(this, R.raw.st);
+        buttonAudio1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 

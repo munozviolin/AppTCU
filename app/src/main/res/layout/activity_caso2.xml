@@ -33,7 +33,7 @@
         android:layout_marginTop="8dp"
         android:background="@android:color/holo_green_light"
         android:fontFamily="@font/flamenco_light"
-        android:text="REPRODUCIR"
+        android:text="reproducir"
         android:textColor="@android:color/background_light"
         android:textColorLink="@android:color/background_light"
         app:layout_constraintBottom_toBottomOf="parent"
