@@ -11,12 +11,14 @@ import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 
 public class Caso2 extends AppCompatActivity {
 
     GestureDetectorCompat gestureObject;
     static MediaPlayer mp = new MediaPlayer();
+    static MediaPlayer mp2 = new MediaPlayer();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,7 +51,12 @@ public class Caso2 extends AppCompatActivity {
         }, 4000);
 
         Button buttonAudio = (Button) findViewById(R.id.buttonCaso2);
-        mp = MediaPlayer.create(this, R.raw.star_wars);
+        ImageButton buttonAudio1 = (ImageButton) findViewById(R.id.imageButton2_1);
+        Button buttonAudio2 = (Button) findViewById(R.id.buttonCaso2_1);
+        ImageButton buttonAudio3 = (ImageButton) findViewById(R.id.imageButton2_2);
+        mp = MediaPlayer.create(this, R.raw.errefa);
+        mp2 = MediaPlayer.create(this, R.raw.tenanh);
+
         buttonAudio.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -58,14 +65,57 @@ public class Caso2 extends AppCompatActivity {
                     if (mp.isPlaying()) {
                         mp.stop();
                         mp.release();
-                        mp = MediaPlayer.create(Caso2.this, R.raw.star_wars);
+                        mp = MediaPlayer.create(Caso2.this, R.raw.errefa);
                     } mp.start();
+                } catch(Exception e) { e.printStackTrace(); }
+            }
+        });
+
+        buttonAudio1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                try {
+                    if (mp.isPlaying()) {
+                        mp.stop();
+                        mp.release();
+                        mp = MediaPlayer.create(Caso2.this, R.raw.errefa);
+                    } mp.start();
+                } catch(Exception e) { e.printStackTrace(); }
+            }
+        });
+
+        buttonAudio2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                try {
+                    if (mp2.isPlaying()) {
+                        mp2.stop();
+                        mp2.release();
+                        mp2 = MediaPlayer.create(Caso2.this, R.raw.tenanh);
+                    } mp2.start();
+                } catch(Exception e) { e.printStackTrace(); }
+            }
+        });
+
+        buttonAudio3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                try {
+                    if (mp2.isPlaying()) {
+                        mp2.stop();
+                        mp2.release();
+                        mp2 = MediaPlayer.create(Caso2.this, R.raw.tenanh);
+                    } mp2.start();
                 } catch(Exception e) { e.printStackTrace(); }
             }
         });
 
         gestureObject = new GestureDetectorCompat(this, new Caso2.LearnGesture());
     }
+
     @Override
     public void onStop() {
         super.onStop();

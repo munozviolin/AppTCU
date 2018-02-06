@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/holo_orange_dark"
+    android:background="@android:color/background_light"
     tools:context="com.tcu.munozviolin.navigationdrawer.Caso2"
     tools:layout_editor_absoluteY="81dp">
 
@@ -15,8 +15,9 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:fontFamily="@font/flamenco_light"
-        android:text="B"
+        android:fontFamily="@font/margarine"
+        android:text="\e"
+        android:textColor="@android:color/black"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -25,22 +26,33 @@
 
     <Button
         android:id="@+id/buttonCaso2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:background="@android:color/holo_green_light"
-        android:fontFamily="@font/flamenco_light"
-        android:text="reproducir"
-        android:textColor="@android:color/background_light"
-        android:textColorLink="@android:color/background_light"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="95dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="64dp"
+        android:background="@color/colorPrimary"
+        android:fontFamily="@font/margarine"
+        android:text="erréfa"
+        android:textAllCaps="?android:attr/windowSwipeToDismiss"
+        android:textColor="@android:color/holo_green_light"
+        android:textColorLink="@android:color/black"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.498" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonCaso2_1"
+        android:layout_width="95dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="92dp"
+        android:background="@color/colorPrimary"
+        android:fontFamily="@font/margarine"
+        android:text="ténanh"
+        android:textAllCaps="?android:attr/windowSwipeToDismiss"
+        android:textColor="@android:color/holo_green_light"
+        android:textColorLink="@android:color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton2_1" />
 
     <ImageView
         android:id="@+id/gifIzq"
@@ -72,6 +84,28 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.498" />
 
+    <ImageButton
+        android:id="@+id/imageButton2_1"
+        android:layout_width="95dp"
+        android:layout_height="101dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/errefa"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonCaso2"
+        app:srcCompat="@android:color/transparent" />
+
+    <ImageButton
+        android:id="@+id/imageButton2_2"
+        android:layout_width="95dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/tenanh"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonCaso2_1"
+        app:srcCompat="@android:color/transparent" />
+
     <!--<ImageView
         android:id="@+id/imageView2"
         android:layout_width="22dp"
@@ -86,7 +120,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/left" />
-
     <ImageView
         android:id="@+id/imageView4"
         android:layout_width="22dp"

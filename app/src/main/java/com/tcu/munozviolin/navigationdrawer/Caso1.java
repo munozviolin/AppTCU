@@ -49,7 +49,11 @@ public class Caso1 extends AppCompatActivity {
 
         Button buttonAudio = (Button) findViewById(R.id.buttonCaso1);
         ImageButton buttonAudio1 = (ImageButton) findViewById(R.id.imageButton);
-        mp = MediaPlayer.create(this, R.raw.st);
+        Button buttonAudio2 = (Button) findViewById(R.id.buttonCaso1_2);
+        ImageButton buttonAudio3 = (ImageButton) findViewById(R.id.imageButton2);
+        mp = MediaPlayer.create(this, R.raw.afela);
+        mp2 = MediaPlayer.create(this, R.raw.ajarra);
+
         buttonAudio.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -58,7 +62,7 @@ public class Caso1 extends AppCompatActivity {
                     if (mp.isPlaying()) {
                         mp.stop();
                         mp.release();
-                        mp = MediaPlayer.create(Caso1.this, R.raw.st);
+                        mp = MediaPlayer.create(Caso1.this, R.raw.afela);
                     } mp.start();
                 } catch(Exception e) { e.printStackTrace(); }
             }
@@ -73,8 +77,36 @@ public class Caso1 extends AppCompatActivity {
                     if (mp.isPlaying()) {
                         mp.stop();
                         mp.release();
-                        mp = MediaPlayer.create(Caso1.this, R.raw.st);
+                        mp = MediaPlayer.create(Caso1.this, R.raw.afela);
                     } mp.start();
+                } catch(Exception e) { e.printStackTrace(); }
+            }
+        });
+
+        buttonAudio2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                try {
+                    if (mp2.isPlaying()) {
+                        mp2.stop();
+                        mp2.release();
+                        mp2 = MediaPlayer.create(Caso1.this, R.raw.ajarra);
+                    } mp2.start();
+                } catch(Exception e) { e.printStackTrace(); }
+            }
+        });
+
+        buttonAudio3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                try {
+                    if (mp2.isPlaying()) {
+                        mp2.stop();
+                        mp2.release();
+                        mp2 = MediaPlayer.create(Caso1.this, R.raw.ajarra);
+                    } mp2.start();
                 } catch(Exception e) { e.printStackTrace(); }
             }
         });
