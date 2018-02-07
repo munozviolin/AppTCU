@@ -66,7 +66,8 @@ public class Caso2 extends AppCompatActivity {
                         mp.stop();
                         mp.release();
                         mp = MediaPlayer.create(Caso2.this, R.raw.errefa);
-                    } mp.start();
+                    } mp = MediaPlayer.create(Caso2.this, R.raw.errefa);
+                    mp.start();
                 } catch(Exception e) { e.printStackTrace(); }
             }
         });
@@ -80,7 +81,8 @@ public class Caso2 extends AppCompatActivity {
                         mp.stop();
                         mp.release();
                         mp = MediaPlayer.create(Caso2.this, R.raw.errefa);
-                    } mp.start();
+                    } mp = MediaPlayer.create(Caso2.this, R.raw.errefa);
+                    mp.start();
                 } catch(Exception e) { e.printStackTrace(); }
             }
         });
@@ -94,7 +96,8 @@ public class Caso2 extends AppCompatActivity {
                         mp2.stop();
                         mp2.release();
                         mp2 = MediaPlayer.create(Caso2.this, R.raw.tenanh);
-                    } mp2.start();
+                    } mp2 = MediaPlayer.create(Caso2.this, R.raw.tenanh);
+                    mp2.start();
                 } catch(Exception e) { e.printStackTrace(); }
             }
         });
@@ -108,7 +111,8 @@ public class Caso2 extends AppCompatActivity {
                         mp2.stop();
                         mp2.release();
                         mp2 = MediaPlayer.create(Caso2.this, R.raw.tenanh);
-                    } mp2.start();
+                    } mp2 = MediaPlayer.create(Caso2.this, R.raw.tenanh);
+                    mp2.start();
                 } catch(Exception e) { e.printStackTrace(); }
             }
         });
