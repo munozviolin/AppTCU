@@ -15,23 +15,23 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
-public class Caso10 extends AppCompatActivity {
+public class Caso14 extends AppCompatActivity {
 
     GestureDetectorCompat gestureObject;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_caso10);
+        setContentView(R.layout.activity_caso14);
 
         //las siguientes 4 lineas corresponden al GIF de la flecha izquierda
-        final ImageView imageView = (ImageView) findViewById(R.id.gifIzq10);
+        final ImageView imageView = (ImageView) findViewById(R.id.gifIzq14);
         imageView.setBackgroundResource(R.drawable.gif2);
         final AnimationDrawable frameAnimation = (AnimationDrawable) imageView.getBackground();
         frameAnimation.start();
 
         //las siguientes 4 lineas corresponden al GIF de la flecha derecha
-        final ImageView imageView2 = (ImageView) findViewById(R.id.gifDer10);
+        final ImageView imageView2 = (ImageView) findViewById(R.id.gifDer14);
         imageView2.setBackgroundResource(R.drawable.gif);
         final AnimationDrawable frameAnimation2 = (AnimationDrawable) imageView2.getBackground();
         frameAnimation2.start();
@@ -49,12 +49,12 @@ public class Caso10 extends AppCompatActivity {
             }
         }, 4000);
 
-        Button buttonAudio = (Button) findViewById(R.id.buttonCaso10);
-        ImageButton buttonAudio1 = (ImageButton) findViewById(R.id.imageButton10);
-        Button buttonAudio2 = (Button) findViewById(R.id.buttonCaso10_1);
-        ImageButton buttonAudio6 = (ImageButton) findViewById(R.id.imageButton10_2);
-        Button buttonAudio4 = (Button) findViewById(R.id.buttonCaso10_2);
-        ImageButton buttonAudio5 = (ImageButton) findViewById(R.id.imageButton10_3);
+        Button buttonAudio = (Button) findViewById(R.id.buttonCaso14);
+        ImageButton buttonAudio1 = (ImageButton) findViewById(R.id.imageButton14);
+        Button buttonAudio2 = (Button) findViewById(R.id.buttonCaso14_1);
+        ImageButton buttonAudio6 = (ImageButton) findViewById(R.id.imageButton14_2);
+        Button buttonAudio4 = (Button) findViewById(R.id.buttonCaso14_2);
+        ImageButton buttonAudio5 = (ImageButton) findViewById(R.id.imageButton14_3);
 
         buttonAudio.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -98,18 +98,18 @@ public class Caso10 extends AppCompatActivity {
             }
         });
 
-        gestureObject = new GestureDetectorCompat(this, new Caso10.LearnGesture());
+        gestureObject = new GestureDetectorCompat(this, new Caso14.LearnGesture());
     }
 
     void play(int resourceID) {
         final MediaPlayer player;
 
         if (resourceID == 1){
-            player = MediaPlayer.create(this, R.raw.yari);
+            player = MediaPlayer.create(this, R.raw.mora);
         } else if (resourceID == 2){
-            player = MediaPlayer.create(this, R.raw.coyonh);
+            player = MediaPlayer.create(this, R.raw.tomtomiora);
         } else {
-            player = MediaPlayer.create(this, R.raw.iyanh);
+            player = MediaPlayer.create(this, R.raw.chomchomiaru);
         }
 
         player.setAudioStreamType(AudioManager.STREAM_MUSIC);
@@ -134,14 +134,14 @@ public class Caso10 extends AppCompatActivity {
         @Override
         public boolean onFling(MotionEvent event1, MotionEvent event2, float velocityX, float velocityY){
             if (event2.getX() > event1.getX()){//swipe izquierda
-                Intent intent = new Intent(Caso10.this, Caso9.class);
+                Intent intent = new Intent(Caso14.this, Caso13.class);
                 finish();
-                Caso10.this.overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                Caso14.this.overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                 startActivity(intent);
             } else if (event1.getX() > event2.getX()){//swipe derecha
-                Intent intent = new Intent(Caso10.this, Caso11.class);
+                Intent intent = new Intent(Caso14.this, Caso15.class);
                 finish();
-                Caso10.this.overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                Caso14.this.overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                 startActivity(intent);
             }
             return true;

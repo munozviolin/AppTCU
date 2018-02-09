@@ -29,7 +29,14 @@
         <activity android:name=".Caso7" />
         <activity android:name=".Caso8" />
         <activity android:name=".Caso9" />
-        <activity android:name=".Caso10"></activity>
+        <activity android:name=".Caso10" />
+        <activity android:name=".Caso11" />
+        <activity android:name=".Caso12" />
+        <activity android:name=".Caso13" />
+        <activity android:name=".Caso14" />
+        <activity android:name=".Caso15" />
+        <activity android:name=".Caso16" />
+        <activity android:name=".Caso17"></activity>
 
         <meta-data
             android:name="preloaded_fonts"
