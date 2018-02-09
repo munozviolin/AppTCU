@@ -4,11 +4,11 @@ import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
-import android.net.Uri;
+import android.os.Bundle;
 import android.os.Handler;
+import android.provider.MediaStore;
 import android.support.v4.view.GestureDetectorCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
@@ -16,27 +16,27 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
-import java.io.IOException;
-
-public class Caso2 extends AppCompatActivity {
+public class Caso8 extends AppCompatActivity {
 
     GestureDetectorCompat gestureObject;
     static MediaPlayer mp = new MediaPlayer();
     static MediaPlayer mp2 = new MediaPlayer();
+    static MediaPlayer mp3 = new MediaPlayer();
+    static MediaPlayer mp4 = new MediaPlayer();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_caso2);
+        setContentView(R.layout.activity_caso8);
 
         //las siguientes 4 lineas corresponden al GIF de la flecha izquierda
-        final ImageView imageView = (ImageView) findViewById(R.id.gifIzq);
+        final ImageView imageView = (ImageView) findViewById(R.id.gifIzq8);
         imageView.setBackgroundResource(R.drawable.gif2);
         final AnimationDrawable frameAnimation = (AnimationDrawable) imageView.getBackground();
         frameAnimation.start();
 
         //las siguientes 4 lineas corresponden al GIF de la flecha derecha
-        final ImageView imageView2 = (ImageView) findViewById(R.id.gifDer);
+        final ImageView imageView2 = (ImageView) findViewById(R.id.gifDer8);
         imageView2.setBackgroundResource(R.drawable.gif);
         final AnimationDrawable frameAnimation2 = (AnimationDrawable) imageView2.getBackground();
         frameAnimation2.start();
@@ -46,19 +46,22 @@ public class Caso2 extends AppCompatActivity {
         handler1.postDelayed(new Runnable() {
             @Override
             public void run() {
-                //detener el gif luego de 4 segundos
+                //detener el gif luego de 8 segundos
                 frameAnimation.stop();
                 frameAnimation2.stop();
                 imageView.setVisibility(View.INVISIBLE);
                 imageView2.setVisibility(View.INVISIBLE);
             }
-        }, 4000);
+        }, 8000);
 
-        Button buttonAudio = (Button) findViewById(R.id.buttonCaso2);
-        ImageButton buttonAudio1 = (ImageButton) findViewById(R.id.imageButton2_1);
-        Button buttonAudio2 = (Button) findViewById(R.id.buttonCaso2_1);
-        ImageButton buttonAudio3 = (ImageButton) findViewById(R.id.imageButton2_2);
-
+        Button buttonAudio = (Button) findViewById(R.id.buttonCaso8);
+        ImageButton buttonAudio1 = (ImageButton) findViewById(R.id.imageButton8);
+        Button buttonAudio2 = (Button) findViewById(R.id.buttonCaso8_1);
+        ImageButton buttonAudio8 = (ImageButton) findViewById(R.id.imageButton8_2);
+        Button buttonAudio4 = (Button) findViewById(R.id.buttonCaso8_2);
+        ImageButton buttonAudio5 = (ImageButton) findViewById(R.id.imageButton8_3);
+        Button buttonAudio3 = (Button) findViewById(R.id.buttonCaso8_3);
+        ImageButton buttonAudio6 = (ImageButton) findViewById(R.id.imageButton8_4);
 
         buttonAudio.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -81,15 +84,45 @@ public class Caso2 extends AppCompatActivity {
             }
         });
 
-        buttonAudio3.setOnClickListener(new View.OnClickListener() {
+        buttonAudio8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 play(2);
             }
         });
 
-       /* mp = MediaPlayer.create(this, R.raw.errefa);
-        mp2 = MediaPlayer.create(this, R.raw.tenanh);
+        buttonAudio4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                play(3);
+            }
+        });
+
+        buttonAudio5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                play(3);
+            }
+        });
+
+        buttonAudio3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                play(4);
+            }
+        });
+
+        buttonAudio6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                play(4);
+            }
+        });
+
+        /*mp = MediaPlayer.create(this, R.raw.caju);
+        mp2 = MediaPlayer.create(this, R.raw.tuectuenh);
+        mp3 = MediaPlayer.create(this, R.raw.quilanh);
+        mp4 = MediaPlayer.create(this, R.raw.querracaquerraca);
 
         buttonAudio.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -99,7 +132,7 @@ public class Caso2 extends AppCompatActivity {
                     if (mp.isPlaying()) {
                         //mp.stop();
                         mp.release();
-                        mp = MediaPlayer.create(Caso2.this, R.raw.errefa);
+                        mp = MediaPlayer.create(Caso8.this, R.raw.caju);
                     }
                     mp.start();
                 } catch(Exception e) { e.printStackTrace(); }
@@ -114,7 +147,7 @@ public class Caso2 extends AppCompatActivity {
                     if (mp.isPlaying()) {
                         //mp.stop();
                         mp.release();
-                        mp = MediaPlayer.create(Caso2.this, R.raw.errefa);
+                        mp = MediaPlayer.create(Caso8.this, R.raw.caju);
                     }
                     mp.start();
                 } catch(Exception e) { e.printStackTrace(); }
@@ -129,9 +162,54 @@ public class Caso2 extends AppCompatActivity {
                     if (mp2.isPlaying()) {
                         //mp2.stop();
                         mp2.release();
-                        mp2 = MediaPlayer.create(Caso2.this, R.raw.tenanh);
+                        mp2 = MediaPlayer.create(Caso8.this, R.raw.tuectuenh);
                     }
                     mp2.start();
+                } catch(Exception e) { e.printStackTrace(); }
+            }
+        });
+
+        buttonAudio8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                try {
+                    if (mp2.isPlaying()) {
+                        //mp2.stop();
+                        mp2.release();
+                        mp2 = MediaPlayer.create(Caso8.this, R.raw.tuectuenh);
+                    }
+                    mp2.start();
+                } catch(Exception e) { e.printStackTrace(); }
+            }
+        });
+
+        buttonAudio4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                try {
+                    if (mp3.isPlaying()) {
+                        //mp3.stop();
+                        mp3.release();
+                        mp3 = MediaPlayer.create(Caso8.this, R.raw.quilanh);
+                    }
+                    mp3.start();
+                } catch(Exception e) { e.printStackTrace(); }
+            }
+        });
+
+        buttonAudio5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                try {
+                    if (mp3.isPlaying()) {
+                        //mp3.stop();
+                        mp3.release();
+                        mp3 = MediaPlayer.create(Caso8.this, R.raw.quilanh);
+                    }
+                    mp3.start();
                 } catch(Exception e) { e.printStackTrace(); }
             }
         });
@@ -141,26 +219,45 @@ public class Caso2 extends AppCompatActivity {
             public void onClick(View v) {
 
                 try {
-                    if (mp2.isPlaying()) {
-                        //mp2.stop();
-                        mp2.release();
-                        mp2 = MediaPlayer.create(Caso2.this, R.raw.tenanh);
+                    if (mp4.isPlaying()) {
+                        //mp4.stop();
+                        mp4.release();
+                        mp4 = MediaPlayer.create(Caso8.this, R.raw.querracaquerraca);
                     }
-                    mp2.start();
+                    mp4.start();
+                } catch(Exception e) { e.printStackTrace(); }
+            }
+        });
+
+        buttonAudio6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                try {
+                    if (mp4.isPlaying()) {
+                        //mp4.stop();
+                        mp4.release();
+                        mp4 = MediaPlayer.create(Caso8.this, R.raw.querracaquerraca);
+                    }
+                    mp4.start();
                 } catch(Exception e) { e.printStackTrace(); }
             }
         });*/
 
-        gestureObject = new GestureDetectorCompat(this, new Caso2.LearnGesture());
+        gestureObject = new GestureDetectorCompat(this, new Caso8.LearnGesture());
     }
 
     void play(int resourceID) {
         final MediaPlayer player;
 
         if (resourceID == 1){
-            player = MediaPlayer.create(this, R.raw.errefa);
+            player = MediaPlayer.create(this, R.raw.caju);
+        } else if (resourceID == 2){
+            player = MediaPlayer.create(this, R.raw.tuectuenh);
+        } else if (resourceID =){
+            player = MediaPlayer.create(this, R.raw.quilanh);
         } else {
-            player = MediaPlayer.create(this, R.raw.tenanh);
+            player = MediaPlayer.create(this, R.raw.querracaquerraca);
         }
 
         player.setAudioStreamType(AudioManager.STREAM_MUSIC);
@@ -191,20 +288,26 @@ public class Caso2 extends AppCompatActivity {
         else if (mp2 != null) {
             mp2.stop();
         }
+        else if(mp3 != null) {
+            mp3.stop();
+        }
+        else if (mp4 != null) {
+            mp4.stop();
+        }
     }*/
 
     class LearnGesture extends GestureDetector.SimpleOnGestureListener {
         @Override
         public boolean onFling(MotionEvent event1, MotionEvent event2, float velocityX, float velocityY){
             if (event2.getX() > event1.getX()){//swipe izquierda
-                Intent intent = new Intent(Caso2.this, Caso1.class);
+                Intent intent = new Intent(Caso8.this, Caso7.class);
                 finish();
-                Caso2.this.overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                Caso8.this.overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                 startActivity(intent);
             } else if (event1.getX() > event2.getX()){//swipe derecha
-                Intent intent = new Intent(Caso2.this, Caso3.class);
+                Intent intent = new Intent(Caso8.this, Caso8.class);
                 finish();
-                Caso2.this.overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                Caso8.this.overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                 startActivity(intent);
             }
             return true;

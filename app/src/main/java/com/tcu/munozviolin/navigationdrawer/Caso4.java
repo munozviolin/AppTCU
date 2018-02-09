@@ -2,6 +2,7 @@ package com.tcu.munozviolin.navigationdrawer;
 
 import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
+import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
@@ -17,8 +18,8 @@ import android.widget.ImageView;
 public class Caso4 extends AppCompatActivity {
 
     GestureDetectorCompat gestureObject;
-    static MediaPlayer mp = new MediaPlayer();
-    static MediaPlayer mp2 = new MediaPlayer();
+    //static MediaPlayer mp = new MediaPlayer();
+    //static MediaPlayer mp2 = new MediaPlayer();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,7 +55,7 @@ public class Caso4 extends AppCompatActivity {
         ImageButton buttonAudio1 = (ImageButton) findViewById(R.id.imageButton4);
         Button buttonAudio2 = (Button) findViewById(R.id.buttonCaso4_1);
         ImageButton buttonAudio4 = (ImageButton) findViewById(R.id.imageButton4_2);
-        mp = MediaPlayer.create(this, R.raw.ola);
+        /*mp = MediaPlayer.create(this, R.raw.ola);
         mp2 = MediaPlayer.create(this, R.raw.oterra);
 
         buttonAudio.setOnClickListener(new View.OnClickListener() {
@@ -63,10 +64,10 @@ public class Caso4 extends AppCompatActivity {
 
                 try {
                     if (mp.isPlaying()) {
-                        mp.stop();
+                        //mp.stop();
                         mp.release();
                         mp = MediaPlayer.create(Caso4.this, R.raw.ola);
-                    } mp = MediaPlayer.create(Caso4.this, R.raw.ola);
+                    }
                     mp.start();
                 } catch(Exception e) { e.printStackTrace(); }
             }
@@ -78,10 +79,10 @@ public class Caso4 extends AppCompatActivity {
 
                 try {
                     if (mp.isPlaying()) {
-                        mp.stop();
+                        //mp.stop();
                         mp.release();
                         mp = MediaPlayer.create(Caso4.this, R.raw.ola);
-                    } mp = MediaPlayer.create(Caso4.this, R.raw.ola);
+                    }
                     mp.start();
                 } catch(Exception e) { e.printStackTrace(); }
             }
@@ -96,7 +97,7 @@ public class Caso4 extends AppCompatActivity {
                         mp2.stop();
                         mp2.release();
                         mp2 = MediaPlayer.create(Caso4.this, R.raw.oterra);
-                    } mp2 = MediaPlayer.create(Caso4.this, R.raw.oterra);
+                    }
                     mp2.start();
                 } catch(Exception e) { e.printStackTrace(); }
             }
@@ -108,26 +109,84 @@ public class Caso4 extends AppCompatActivity {
 
                 try {
                     if (mp2.isPlaying()) {
-                        mp2.stop();
+                        //mp2.stop();
                         mp2.release();
                         mp2 = MediaPlayer.create(Caso4.this, R.raw.oterra);
-                    } mp2 = MediaPlayer.create(Caso4.this, R.raw.oterra);
+                    }
                     mp2.start();
                 } catch(Exception e) { e.printStackTrace(); }
+            }
+        });*/
+
+        buttonAudio.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                play(1);
+            }
+        });
+
+        buttonAudio1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                play(1);
+            }
+        });
+
+        buttonAudio2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                play(2);
+            }
+        });
+
+        buttonAudio4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                play(2);
             }
         });
 
         gestureObject = new GestureDetectorCompat(this, new Caso4.LearnGesture());
     }
 
-    @Override
+    void play(int resourceID) {
+        final MediaPlayer player;
+
+        if (resourceID == 1){
+            player = MediaPlayer.create(this, R.raw.ola);
+        } else {
+            player = MediaPlayer.create(this, R.raw.oterra);
+        }
+
+        player.setAudioStreamType(AudioManager.STREAM_MUSIC);
+
+        player.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mediaPlayer) {
+                player.release();
+            }
+        });
+
+        player.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mediaPlayer) {
+                mediaPlayer.start();
+            }
+        });
+
+    }
+
+    /*@Override
     public void onStop() {
         super.onStop();
 
         if (mp != null) {
             mp.stop();
         }
-    }
+        else if (mp2 != null) {
+            mp2.stop();
+        }
+    }*/
 
     class LearnGesture extends GestureDetector.SimpleOnGestureListener {
         @Override
@@ -137,12 +196,12 @@ public class Caso4 extends AppCompatActivity {
                 finish();
                 Caso4.this.overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                 startActivity(intent);
-            } /*else if (event1.getX() > event2.getX()){//swipe derecha
-                Intent intent = new Intent(Caso4.this, Caso4.class);
+            } else if (event1.getX() > event2.getX()){//swipe derecha
+                Intent intent = new Intent(Caso4.this, Caso5.class);
                 finish();
                 Caso4.this.overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                 startActivity(intent);
-            }*/
+            }
             return true;
         }
     }

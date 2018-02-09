@@ -28,9 +28,13 @@
             <!--</intent-filter>-->
         </activity>
         <activity android:name=".Caso1" />
+        <activity android:name=".Caso2" />
         <activity android:name=".Caso3" />
         <activity android:name=".Caso4" />
-        <activity android:name=".Caso2"></activity>
+        <activity android:name=".Caso5" />
+        <activity android:name=".Caso6" />
+        <activity android:name=".Caso7" />
+        <activity android:name=".Caso8"></activity>
 
         <meta-data
             android:name="preloaded_fonts"
