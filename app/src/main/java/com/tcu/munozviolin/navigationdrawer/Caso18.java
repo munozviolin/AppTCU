@@ -15,23 +15,23 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
-public class Caso17 extends AppCompatActivity {
+public class Caso18 extends AppCompatActivity {
 
     GestureDetectorCompat gestureObject;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_caso17);
+        setContentView(R.layout.activity_caso18);
 
         //las siguientes 4 lineas corresponden al GIF de la flecha izquierda
-        final ImageView imageView = (ImageView) findViewById(R.id.gifIzq17);
+        final ImageView imageView = (ImageView) findViewById(R.id.gifIzq18);
         imageView.setBackgroundResource(R.drawable.gif2);
         final AnimationDrawable frameAnimation = (AnimationDrawable) imageView.getBackground();
         frameAnimation.start();
 
         //las siguientes 4 lineas corresponden al GIF de la flecha derecha
-        final ImageView imageView2 = (ImageView) findViewById(R.id.gifDer17);
+        final ImageView imageView2 = (ImageView) findViewById(R.id.gifDer18);
         imageView2.setBackgroundResource(R.drawable.gif);
         final AnimationDrawable frameAnimation2 = (AnimationDrawable) imageView2.getBackground();
         frameAnimation2.start();
@@ -49,12 +49,14 @@ public class Caso17 extends AppCompatActivity {
             }
         }, 4000);
 
-        Button buttonAudio = (Button) findViewById(R.id.buttonCaso17);
-        ImageButton buttonAudio1 = (ImageButton) findViewById(R.id.imageButton17);
-        Button buttonAudio2 = (Button) findViewById(R.id.buttonCaso17_1);
-        ImageButton buttonAudio6 = (ImageButton) findViewById(R.id.imageButton17_2);
-        Button buttonAudio4 = (Button) findViewById(R.id.buttonCaso17_2);
-        ImageButton buttonAudio5 = (ImageButton) findViewById(R.id.imageButton17_3);
+        Button buttonAudio = (Button) findViewById(R.id.buttonCaso18);
+        ImageButton buttonAudio1 = (ImageButton) findViewById(R.id.imageButton18);
+        Button buttonAudio2 = (Button) findViewById(R.id.buttonCaso18_1);
+        ImageButton buttonAudio8 = (ImageButton) findViewById(R.id.imageButton18_2);
+        Button buttonAudio4 = (Button) findViewById(R.id.buttonCaso18_2);
+        ImageButton buttonAudio5 = (ImageButton) findViewById(R.id.imageButton20_3);
+        Button buttonAudio3 = (Button) findViewById(R.id.buttonCaso18_3);
+        ImageButton buttonAudio6 = (ImageButton) findViewById(R.id.imageButton18_4);
 
         buttonAudio.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,7 +79,7 @@ public class Caso17 extends AppCompatActivity {
             }
         });
 
-        buttonAudio6.setOnClickListener(new View.OnClickListener() {
+        buttonAudio8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 play(2);
@@ -98,18 +100,34 @@ public class Caso17 extends AppCompatActivity {
             }
         });
 
-        gestureObject = new GestureDetectorCompat(this, new Caso17.LearnGesture());
+        buttonAudio3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                play(4);
+            }
+        });
+
+        buttonAudio6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                play(4);
+            }
+        });
+
+        gestureObject = new GestureDetectorCompat(this, new Caso18.LearnGesture());
     }
 
     void play(int resourceID) {
         final MediaPlayer player;
 
         if (resourceID == 1){
-            player = MediaPlayer.create(this, R.raw.arafufu);
+            player = MediaPlayer.create(this, R.raw.erra);
         } else if (resourceID == 2){
-            player = MediaPlayer.create(this, R.raw.uru);
+            player = MediaPlayer.create(this, R.raw.torroifa);
+        } else if (resourceID == 3){
+            player = MediaPlayer.create(this, R.raw.samorr);
         } else {
-            player = MediaPlayer.create(this, R.raw.carecar);
+            player = MediaPlayer.create(this, R.raw.porroporr);
         }
 
         player.setAudioStreamType(AudioManager.STREAM_MUSIC);
@@ -134,14 +152,14 @@ public class Caso17 extends AppCompatActivity {
         @Override
         public boolean onFling(MotionEvent event1, MotionEvent event2, float velocityX, float velocityY){
             if (event2.getX() > event1.getX()){//swipe izquierda
-                Intent intent = new Intent(Caso17.this, Caso16.class);
+                Intent intent = new Intent(Caso18.this, Caso17.class);
                 finish();
-                Caso17.this.overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                Caso18.this.overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                 startActivity(intent);
             } else if (event1.getX() > event2.getX()){//swipe derecha
-                Intent intent = new Intent(Caso17.this, Caso18.class);
+                Intent intent = new Intent(Caso18.this, Caso19.class);
                 finish();
-                Caso17.this.overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                Caso18.this.overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                 startActivity(intent);
             }
             return true;
