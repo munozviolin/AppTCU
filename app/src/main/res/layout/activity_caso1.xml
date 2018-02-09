@@ -62,8 +62,6 @@
         tools:fontFamily="@font/margarine"
         tools:ignore="MissingConstraints" />
 
-    <!--android:text="\u1ebb sasd"-->
-
     <ImageView
         android:id="@+id/gif"
         android:layout_width="45dp"

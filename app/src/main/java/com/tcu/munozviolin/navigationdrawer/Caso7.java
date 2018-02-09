@@ -18,8 +18,6 @@ import android.widget.ImageView;
 public class Caso7 extends AppCompatActivity {
 
     GestureDetectorCompat gestureObject;
-    //static MediaPlayer mp = new MediaPlayer();
-    //static MediaPlayer mp2 = new MediaPlayer();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,35 +41,23 @@ public class Caso7 extends AppCompatActivity {
         handler1.postDelayed(new Runnable() {
             @Override
             public void run() {
-                //detener el gif luego de 7 segundos
+                //detener el gif luego de 4 segundos
                 frameAnimation.stop();
                 frameAnimation2.stop();
                 imageView.setVisibility(View.INVISIBLE);
                 imageView2.setVisibility(View.INVISIBLE);
             }
-        }, 7000);
+        }, 4000);
 
         Button buttonAudio = (Button) findViewById(R.id.buttonCaso7);
         ImageButton buttonAudio1 = (ImageButton) findViewById(R.id.imageButton7);
         Button buttonAudio2 = (Button) findViewById(R.id.buttonCaso7_1);
         ImageButton buttonAudio7 = (ImageButton) findViewById(R.id.imageButton7_2);
-        //mp = MediaPlayer.create(this, R.raw.tare);
-        //mp2 = MediaPlayer.create(this, R.raw.tiu);
 
         buttonAudio.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 play(1);
-                //mp = MediaPlayer.create(v.getContext(), R.raw.tare);
-                /*try {
-                    if (mp.isPlaying()) {
-                        mp.stop();
-                        mp.release();
-                        //mp = MediaPlayer.create(Caso7.this, R.raw.tare);
-                        //mp = MediaPlayer.create(v.getContext(), R.raw.tare);
-                    }
-                    mp.start();
-                } catch(Exception e) { e.printStackTrace(); }*/
             }
         });
 
@@ -79,23 +65,6 @@ public class Caso7 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 play(1);
-                /*mp = MediaPlayer.create(v.getContext(), R.raw.tare);
-                try {
-                    if (mp.isPlaying()) {
-                        mp.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                            @Override
-                            public void onCompletion(MediaPlayer mediaPlayer) {
-                                mp.stop();
-                                mp.release();
-                            }
-                        });
-                        //mp.stop();
-                        //mp.release();
-                        //mp = MediaPlayer.create(Caso7.this, R.raw.tare);
-                        mp = MediaPlayer.create(v.getContext(), R.raw.tare);
-                    }
-                    mp.start();
-                } catch(Exception e) { e.printStackTrace(); }*/
             }
         });
 
@@ -103,23 +72,6 @@ public class Caso7 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 play(2);
-                /*mp = MediaPlayer.create(v.getContext(), R.raw.tiu);
-                try {
-                    if (mp.isPlaying()) {
-                        mp.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                            @Override
-                            public void onCompletion(MediaPlayer mediaPlayer) {
-                                mp.stop();
-                                mp.release();
-                            }
-                        });
-                        //mp.stop();
-                        //mp.release();
-                        mp = MediaPlayer.create(v.getContext(), R.raw.tiu);
-                        //mp = MediaPlayer.create(Caso7.this, R.raw.tiu);
-                    }
-                    mp.start();
-                } catch(Exception e) { e.printStackTrace(); }*/
             }
         });
 
@@ -127,23 +79,6 @@ public class Caso7 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 play(2);
-                /*mp = MediaPlayer.create(v.getContext(), R.raw.tiu);
-                try {
-                    if (mp.isPlaying()) {
-                        mp.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                            @Override
-                            public void onCompletion(MediaPlayer mediaPlayer) {
-                                mp.stop();
-                                mp.release();
-                            }
-                        });
-                        //mp.stop();
-                        //mp.release();
-                        //mp = MediaPlayer.create(Caso7.this, R.raw.tiu);
-                        mp = MediaPlayer.create(v.getContext(), R.raw.tiu);
-                    }
-                    mp.start();
-                } catch(Exception e) { e.printStackTrace(); }*/
             }
         });
 
@@ -176,18 +111,6 @@ public class Caso7 extends AppCompatActivity {
         });
 
     }
-
-    /*@Override
-    public void onStop() {
-        super.onStop();
-
-        if (mp != null) {
-            mp.stop();
-        }
-        *//*else if (mp2 != null) {
-            mp2.stop();
-        }*//*
-    }*/
 
     class LearnGesture extends GestureDetector.SimpleOnGestureListener {
         @Override

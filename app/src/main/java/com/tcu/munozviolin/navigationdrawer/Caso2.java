@@ -21,8 +21,6 @@ import java.io.IOException;
 public class Caso2 extends AppCompatActivity {
 
     GestureDetectorCompat gestureObject;
-    static MediaPlayer mp = new MediaPlayer();
-    static MediaPlayer mp2 = new MediaPlayer();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,69 +86,6 @@ public class Caso2 extends AppCompatActivity {
             }
         });
 
-       /* mp = MediaPlayer.create(this, R.raw.errefa);
-        mp2 = MediaPlayer.create(this, R.raw.tenanh);
-
-        buttonAudio.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                try {
-                    if (mp.isPlaying()) {
-                        //mp.stop();
-                        mp.release();
-                        mp = MediaPlayer.create(Caso2.this, R.raw.errefa);
-                    }
-                    mp.start();
-                } catch(Exception e) { e.printStackTrace(); }
-            }
-        });
-
-        buttonAudio1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                try {
-                    if (mp.isPlaying()) {
-                        //mp.stop();
-                        mp.release();
-                        mp = MediaPlayer.create(Caso2.this, R.raw.errefa);
-                    }
-                    mp.start();
-                } catch(Exception e) { e.printStackTrace(); }
-            }
-        });
-
-        buttonAudio2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                try {
-                    if (mp2.isPlaying()) {
-                        //mp2.stop();
-                        mp2.release();
-                        mp2 = MediaPlayer.create(Caso2.this, R.raw.tenanh);
-                    }
-                    mp2.start();
-                } catch(Exception e) { e.printStackTrace(); }
-            }
-        });
-
-        buttonAudio3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                try {
-                    if (mp2.isPlaying()) {
-                        //mp2.stop();
-                        mp2.release();
-                        mp2 = MediaPlayer.create(Caso2.this, R.raw.tenanh);
-                    }
-                    mp2.start();
-                } catch(Exception e) { e.printStackTrace(); }
-            }
-        });*/
-
         gestureObject = new GestureDetectorCompat(this, new Caso2.LearnGesture());
     }
 
@@ -180,18 +115,6 @@ public class Caso2 extends AppCompatActivity {
         });
 
     }
-
-    /*@Override
-    public void onStop() {
-        super.onStop();
-
-        if (mp != null) {
-            mp.stop();
-        }
-        else if (mp2 != null) {
-            mp2.stop();
-        }
-    }*/
 
     class LearnGesture extends GestureDetector.SimpleOnGestureListener {
         @Override

@@ -1,39 +1,40 @@
 package com.tcu.munozviolin.navigationdrawer;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.graphics.drawable.AnimationDrawable;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
-import android.net.Uri;
+import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.view.GestureDetectorCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
-import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.MediaController;
-import android.widget.VideoView;
 
-public class Caso1 extends AppCompatActivity {
+public class Caso9 extends AppCompatActivity {
 
     GestureDetectorCompat gestureObject;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_caso1);
+        setContentView(R.layout.activity_caso9);
 
-        //las siguientes 4 lineas corresponden al GIF de la flecha derecha
-        final ImageView imageView = (ImageView) findViewById(R.id.gif);
-        imageView.setBackgroundResource(R.drawable.gif);
+        //las siguientes 4 lineas corresponden al GIF de la flecha izquierda
+        final ImageView imageView = (ImageView) findViewById(R.id.gifIzq9);
+        imageView.setBackgroundResource(R.drawable.gif2);
         final AnimationDrawable frameAnimation = (AnimationDrawable) imageView.getBackground();
         frameAnimation.start();
+
+        //las siguientes 4 lineas corresponden al GIF de la flecha derecha
+        final ImageView imageView2 = (ImageView) findViewById(R.id.gifDer9);
+        imageView2.setBackgroundResource(R.drawable.gif);
+        final AnimationDrawable frameAnimation2 = (AnimationDrawable) imageView2.getBackground();
+        frameAnimation2.start();
 
         //codigo para controlar la cantidad de segundos que dura la animacion
         Handler handler1 = new Handler();
@@ -42,14 +43,16 @@ public class Caso1 extends AppCompatActivity {
             public void run() {
                 //detener el gif luego de 4 segundos
                 frameAnimation.stop();
+                frameAnimation2.stop();
                 imageView.setVisibility(View.INVISIBLE);
+                imageView2.setVisibility(View.INVISIBLE);
             }
         }, 4000);
 
-        Button buttonAudio = (Button) findViewById(R.id.buttonCaso1);
-        ImageButton buttonAudio1 = (ImageButton) findViewById(R.id.imageButton);
-        Button buttonAudio2 = (Button) findViewById(R.id.buttonCaso1_2);
-        ImageButton buttonAudio3 = (ImageButton) findViewById(R.id.imageButton2);
+        Button buttonAudio = (Button) findViewById(R.id.buttonCaso9);
+        ImageButton buttonAudio1 = (ImageButton) findViewById(R.id.imageButton9);
+        Button buttonAudio2 = (Button) findViewById(R.id.buttonCaso9_1);
+        ImageButton buttonAudio7 = (ImageButton) findViewById(R.id.imageButton9_2);
 
         buttonAudio.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,7 +61,6 @@ public class Caso1 extends AppCompatActivity {
             }
         });
 
-        //mp2 = MediaPlayer.create(this, R.raw.st);
         buttonAudio1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -73,23 +75,23 @@ public class Caso1 extends AppCompatActivity {
             }
         });
 
-        buttonAudio3.setOnClickListener(new View.OnClickListener() {
+        buttonAudio7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 play(2);
             }
         });
 
-        gestureObject = new GestureDetectorCompat(this, new Caso1.LearnGesture());
+        gestureObject = new GestureDetectorCompat(this, new Caso9.LearnGesture());
     }
 
     void play(int resourceID) {
         final MediaPlayer player;
 
         if (resourceID == 1){
-            player = MediaPlayer.create(this, R.raw.afela);
+            player = MediaPlayer.create(this, R.raw.chuchu);
         } else {
-            player = MediaPlayer.create(this, R.raw.ajarra);
+            player = MediaPlayer.create(this, R.raw.cuchicuch);
         }
 
         player.setAudioStreamType(AudioManager.STREAM_MUSIC);
@@ -114,13 +116,14 @@ public class Caso1 extends AppCompatActivity {
         @Override
         public boolean onFling(MotionEvent event1, MotionEvent event2, float velocityX, float velocityY){
             if (event2.getX() > event1.getX()){//swipe izquierda
-                //Intent intent = new Intent(Caso1.this, palabra2.class);
-                //finish();
-                //startActivity(intent);
-            } else if (event1.getX() > event2.getX()){//swipe derecha
-                Intent intent = new Intent(Caso1.this, Caso2.class);
+                Intent intent = new Intent(Caso9.this, Caso8.class);
                 finish();
-                Caso1.this.overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+                Caso9.this.overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                startActivity(intent);
+            } else if (event1.getX() > event2.getX()){//swipe derecha
+                Intent intent = new Intent(Caso9.this, Caso10.class);
+                finish();
+                Caso9.this.overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                 startActivity(intent);
             }
             return true;
