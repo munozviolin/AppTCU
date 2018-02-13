@@ -11,6 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -98,18 +99,18 @@ public class Caso6 extends AppCompatActivity {
             }
         });
 
-        gestureObject = new GestureDetectorCompat(this, new Caso6.LearnGesture());
+        gestureObject = new GestureDetectorCompat(getApplicationContext(), new Caso6.LearnGesture());
     }
 
     void play(int resourceID) {
         final MediaPlayer player;
 
         if (resourceID == 1){
-            player = MediaPlayer.create(this, R.raw.patanh);
+            player = MediaPlayer.create(getApplicationContext(), R.raw.patanh);
         } else if (resourceID == 2){
-            player = MediaPlayer.create(this, R.raw.pora);
+            player = MediaPlayer.create(getApplicationContext(), R.raw.pora);
         } else {
-            player = MediaPlayer.create(this, R.raw.teptep);
+            player = MediaPlayer.create(getApplicationContext(), R.raw.teptep);
         }
 
         player.setAudioStreamType(AudioManager.STREAM_MUSIC);
@@ -134,12 +135,12 @@ public class Caso6 extends AppCompatActivity {
         @Override
         public boolean onFling(MotionEvent event1, MotionEvent event2, float velocityX, float velocityY){
             if (event2.getX() > event1.getX()){//swipe izquierda
-                Intent intent = new Intent(Caso6.this, Caso5.class);
+                Intent intent = new Intent(getApplicationContext(), Caso5.class);
                 finish();
                 Caso6.this.overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                 startActivity(intent);
             } else if (event1.getX() > event2.getX()){//swipe derecha
-                Intent intent = new Intent(Caso6.this, Caso7.class);
+                Intent intent = new Intent(getApplicationContext(), Caso7.class);
                 finish();
                 Caso6.this.overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                 startActivity(intent);

@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -86,16 +87,16 @@ public class Caso2 extends AppCompatActivity {
             }
         });
 
-        gestureObject = new GestureDetectorCompat(this, new Caso2.LearnGesture());
+        gestureObject = new GestureDetectorCompat(getApplicationContext(), new Caso2.LearnGesture());
     }
 
     void play(int resourceID) {
         final MediaPlayer player;
 
         if (resourceID == 1){
-            player = MediaPlayer.create(this, R.raw.errefa);
+            player = MediaPlayer.create(getApplicationContext(), R.raw.errefa);
         } else {
-            player = MediaPlayer.create(this, R.raw.tenanh);
+            player = MediaPlayer.create(getApplicationContext(), R.raw.tenanh);
         }
 
         player.setAudioStreamType(AudioManager.STREAM_MUSIC);
@@ -120,12 +121,12 @@ public class Caso2 extends AppCompatActivity {
         @Override
         public boolean onFling(MotionEvent event1, MotionEvent event2, float velocityX, float velocityY){
             if (event2.getX() > event1.getX()){//swipe izquierda
-                Intent intent = new Intent(Caso2.this, Caso1.class);
+                Intent intent = new Intent(getApplicationContext(), Caso1.class);
                 finish();
                 Caso2.this.overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                 startActivity(intent);
             } else if (event1.getX() > event2.getX()){//swipe derecha
-                Intent intent = new Intent(Caso2.this, Caso3.class);
+                Intent intent = new Intent(getApplicationContext(), Caso3.class);
                 finish();
                 Caso2.this.overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                 startActivity(intent);

@@ -11,6 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -114,20 +115,20 @@ public class Caso18 extends AppCompatActivity {
             }
         });
 
-        gestureObject = new GestureDetectorCompat(this, new Caso18.LearnGesture());
+        gestureObject = new GestureDetectorCompat(getApplicationContext(), new Caso18.LearnGesture());
     }
 
     void play(int resourceID) {
         final MediaPlayer player;
 
         if (resourceID == 1){
-            player = MediaPlayer.create(this, R.raw.erra);
+            player = MediaPlayer.create(getApplicationContext(), R.raw.erra);
         } else if (resourceID == 2){
-            player = MediaPlayer.create(this, R.raw.torroifa);
+            player = MediaPlayer.create(getApplicationContext(), R.raw.torroifa);
         } else if (resourceID == 3){
-            player = MediaPlayer.create(this, R.raw.samorr);
+            player = MediaPlayer.create(getApplicationContext(), R.raw.samorr);
         } else {
-            player = MediaPlayer.create(this, R.raw.porroporr);
+            player = MediaPlayer.create(getApplicationContext(), R.raw.porroporr);
         }
 
         player.setAudioStreamType(AudioManager.STREAM_MUSIC);
@@ -152,12 +153,12 @@ public class Caso18 extends AppCompatActivity {
         @Override
         public boolean onFling(MotionEvent event1, MotionEvent event2, float velocityX, float velocityY){
             if (event2.getX() > event1.getX()){//swipe izquierda
-                Intent intent = new Intent(Caso18.this, Caso17.class);
+                Intent intent = new Intent(getApplicationContext(), Caso17.class);
                 finish();
                 Caso18.this.overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                 startActivity(intent);
             } else if (event1.getX() > event2.getX()){//swipe derecha
-                Intent intent = new Intent(Caso18.this, Caso19.class);
+                Intent intent = new Intent(getApplicationContext(), Caso19.class);
                 finish();
                 Caso18.this.overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                 startActivity(intent);

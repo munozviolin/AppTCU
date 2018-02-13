@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:background="@android:color/transparent"
     android:backgroundTint="@android:color/background_light"
+    android:id="@+id/C11"
     tools:context="com.tcu.munozviolin.navigationdrawer.Caso11">
 
     <TextView

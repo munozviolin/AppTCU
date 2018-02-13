@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/background_light"
-    tools:context="com.tcu.munozviolin.navigationdrawer.Caso15"
-    tools:layout_editor_absoluteY="81dp">
+    android:id="@+id/C15"
+    tools:context="com.tcu.munozviolin.navigationdrawer.Caso15">
 
     <TextView
         android:id="@+id/textView15"
