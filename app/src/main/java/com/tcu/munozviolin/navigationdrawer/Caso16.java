@@ -58,6 +58,8 @@ public class Caso16 extends AppCompatActivity {
         ImageButton buttonAudio5 = (ImageButton) findViewById(R.id.imageButton16_3);
         Button buttonAudio3 = (Button) findViewById(R.id.buttonCaso16_3);
         ImageButton buttonAudio6 = (ImageButton) findViewById(R.id.imageButton16_4);
+        Button buttonAudio7 = (Button) findViewById(R.id.buttonCaso16_4);
+        ImageButton buttonAudio9 = (ImageButton) findViewById(R.id.imageButton16_5);
 
         buttonAudio.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -115,6 +117,20 @@ public class Caso16 extends AppCompatActivity {
             }
         });
 
+        buttonAudio7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                play(5);
+            }
+        });
+
+        buttonAudio9.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                play(5);
+            }
+        });
+
         gestureObject = new GestureDetectorCompat(getApplicationContext(), new Caso16.LearnGesture());
     }
 
@@ -127,8 +143,10 @@ public class Caso16 extends AppCompatActivity {
             player = MediaPlayer.create(getApplicationContext(), R.raw.nharachunh);
         } else if (resourceID == 3){
             player = MediaPlayer.create(getApplicationContext(), R.raw.lenhifa);
-        } else {
+        } else if (resourceID == 4){
             player = MediaPlayer.create(getApplicationContext(), R.raw.conh);
+        } else {
+            player = MediaPlayer.create(getApplicationContext(), R.raw.junhoquicuru);
         }
 
         player.setAudioStreamType(AudioManager.STREAM_MUSIC);

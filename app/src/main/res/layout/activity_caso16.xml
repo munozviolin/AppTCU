@@ -30,7 +30,7 @@
         android:id="@+id/buttonCaso16"
         android:layout_width="95dp"
         android:layout_height="37dp"
-        android:layout_marginStart="52dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="64dp"
         android:background="@color/colorPrimary"
         android:fontFamily="@font/margarine"
@@ -45,7 +45,7 @@
         android:layout_width="95dp"
         android:layout_height="37dp"
         android:layout_marginStart="52dp"
-        android:layout_marginTop="104dp"
+        android:layout_marginTop="116dp"
         android:background="@color/colorPrimary"
         android:fontFamily="@font/margarine"
         android:text="nharáchunh"
@@ -58,7 +58,7 @@
         android:id="@+id/buttonCaso16_2"
         android:layout_width="95dp"
         android:layout_height="37dp"
-        android:layout_marginEnd="52dp"
+        android:layout_marginEnd="16dp"
         android:layout_marginTop="64dp"
         android:background="@color/colorPrimary"
         android:fontFamily="@font/margarine"
@@ -81,6 +81,23 @@
         android:textColor="@android:color/holo_green_light"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageButton16_3" />
+
+    <Button
+        android:id="@+id/buttonCaso16_4"
+        android:layout_width="95dp"
+        android:layout_height="37dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="56dp"
+        android:background="@color/colorPrimary"
+        android:fontFamily="@font/margarine"
+        android:text="junhóqui cúru"
+        android:textAllCaps="?android:attr/windowOverscan"
+        android:textColor="@android:color/holo_green_light"
+        app:layout_constraintEnd_toStartOf="@+id/buttonCaso16_2"
+        app:layout_constraintHorizontal_bias="0.509"
+        app:layout_constraintStart_toEndOf="@+id/buttonCaso16"
+        app:layout_constraintTop_toTopOf="@+id/textView16" />
 
     <ImageView
         android:id="@+id/gifIzq16"
@@ -106,10 +123,10 @@
 
     <ImageButton
         android:id="@+id/imageButton16"
-        android:layout_width="95dp"
-        android:layout_height="81dp"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="75dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="27dp"
         android:background="@drawable/nhuilhi"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonCaso16"
@@ -130,7 +147,7 @@
         android:id="@+id/imageButton16_3"
         android:layout_width="93dp"
         android:layout_height="86dp"
-        android:layout_marginEnd="52dp"
+        android:layout_marginEnd="16dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/lenhifa"
         app:layout_constraintEnd_toEndOf="parent"
@@ -147,6 +164,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonCaso16_3"
         app:srcCompat="@android:color/transparent" />
+
+    <ImageButton
+        android:id="@+id/imageButton16_5"
+        android:layout_width="69dp"
+        android:layout_height="61dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/junhoquicuru"
+        app:layout_constraintEnd_toStartOf="@+id/imageButton16_3"
+        app:layout_constraintHorizontal_bias="0.545"
+        app:layout_constraintStart_toEndOf="@+id/imageButton16"
+        app:layout_constraintTop_toBottomOf="@+id/buttonCaso16_4" />
 
 
 </android.support.constraint.ConstraintLayout>
