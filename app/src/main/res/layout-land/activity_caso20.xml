@@ -120,7 +120,7 @@
         android:id="@+id/imageButton20_2"
         android:layout_width="94dp"
         android:layout_height="95dp"
-        android:layout_marginStart="176dp"
+        android:layout_marginStart="179dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/pulhi"
         app:layout_constraintStart_toStartOf="parent"
