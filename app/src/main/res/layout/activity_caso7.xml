@@ -78,8 +78,8 @@
 
     <ImageButton
         android:id="@+id/imageButton7"
-        android:layout_width="95dp"
-        android:layout_height="97dp"
+        android:layout_width="107dp"
+        android:layout_height="51dp"
         android:layout_marginStart="52dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/tare"
